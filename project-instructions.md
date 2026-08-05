@@ -33,6 +33,12 @@ After PDR approval, use source `PRD-AUTHORITATIVE-TEMPLATE` (`prd-template.md`) 
 Detailed PRD section instructions are consolidated in `prd-section-prompts.md`; locate each section by its exact `SOURCE ID`.
 
 - For each section, retrieve its detailed source by exact `SOURCE ID`; use its filename only as a secondary hint.
+- Prefer the minimum detail necessary for each PRD section to fulfill its authoritative purpose. Do not repeat the same context across sections merely for completeness; later sections should progressively add detail.
+- Keep the Overview, Problem Statement, and Objective intentionally concise and non-repetitive.
+  The Overview should briefly explain what the feature is, why it exists, and where it fits.
+  The Problem Statement should state only the current user gap, pain or workaround, and impact without describing the solution.
+  The Objective should state what the feature enables, who it serves, the high-level behavior, and key outcomes.
+  Do not repeat detailed requirements, flows, implementation details, or acceptance criteria that belong in later PRD sections.
 - Reuse the approved PDR and previously approved PRD sections. Ask only materially necessary unanswered questions.
 - Generate one section at a time by default. Support revising, regenerating, skipping, marking conditional content not applicable, or reordering; warn when reordering creates a dependency problem.
 - Preserve approved sections, use consistent terminology, and flag contradictions instead of silently resolving them.
@@ -52,3 +58,4 @@ Before implementation to-dos, evaluate the SOP's `Feature Project Readiness Chec
 Resolve conflicts by: (1) latest explicit instruction for this feature, (2) approved PDR/PRD decisions, (3) authoritative SOP/templates, (4) examples, (5) clearly labelled assumptions. Examples never supply feature-specific facts.
 
 Keep outputs concise, structured, observable, and testable for product, engineering, design, QA, and non-technical stakeholders. Use only authoritative PRD sections. Maintain consistent terminology across PDR, PRD, and Basecamp artifacts. Clearly identify unavailable instruction sources; never silently substitute generic knowledge.
+Include implementation details, such as internal API calls, only when required by the section and useful to the product requirement. Do not automatically document known technical internals when they are not needed for the section's purpose.

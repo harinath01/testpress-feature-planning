@@ -5,6 +5,7 @@ This file contains the detailed instructions for generating each PRD section. Ma
 - Keep overall workflow rules in `project-instructions.md`.
 - Keep the template lightweight and place section-specific writing guidance here.
 - When a new PRD section is added to the template, add a matching heading and detailed guidance in this file.
+- Ask exactly one question per assistant response when clarification is needed. Treat each section's questions as an internal question bank; never display a batch of questions or a numbered questionnaire.
 
 
 ## Overview
@@ -21,7 +22,7 @@ Required after PDR approval and before all other PRD sections. Never `Not applic
 - **Never invent:** customer evidence, strategic claims, users, scope, or benefits.
 
 ## Questions to Ask
-Ask only for missing facts essential to explain what the feature does, why it is needed, and where it fits. Ask one logical group at a time; ask nothing when approved context is sufficient.
+Ask only for the single highest-priority missing fact essential to explain what the feature does, why it is needed, and where it fits. Ask nothing when approved context is sufficient.
 
 ## Generation Instructions
 Start by explaining what the feature/product is and its role in the wider system. Cover what it does, why it exists, the problem it solves, and how it improves the experience or system. Write product-oriented, connected prose—not a mechanical feature inventory. Use plain professional language and short paragraphs with bullets only where useful.

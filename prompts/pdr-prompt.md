@@ -7,6 +7,9 @@ This file contains the detailed instructions for generating each PDR section. Ma
 - When a new PDR section is added to the template, add a matching heading and detailed guidance in this file.
 - Work section by section and stay in the current section until enough grounded context exists to complete it well.
 - Start from the problem, not the proposed feature. Clarify the proposed solution only after the current pain, workflow, impact, and urgency are understood.
+- Ask exactly one question per assistant response. Never show the complete question bank, a numbered questionnaire, or multiple questions at once.
+- For a feature-led opening such as `Need to implement SSO login feature in TPSentinel`, ask only: `Why do you want to implement SSO login in TPSentinel now?` Ask about the pain point in a later turn.
+- After each answer, update the current section and ask only the single highest-value unanswered follow-up. Continue this loop until the current section is sufficiently grounded; then summarize the section and move on only with approval or when the workflow explicitly allows it.
 - Do not invent user quotes, evidence, impact, frequency, emotions, costs, or business decisions. Label assumptions and open questions explicitly.
 - Preserve stable pain point IDs such as `PAIN-001`, `PAIN-002` once they are introduced.
 
@@ -24,7 +27,7 @@ Required at the start of discovery. Never `Not applicable`.
 - **Never invent:** business type, request history, urgency, or feature framing.
 
 ## Questions to Ask
-Ask only for missing context that is necessary to understand the user and situation. Prefer questions about the real-world job, current product usage, and reason this topic surfaced now. Do not let the conversation stay solution-first if the actual problem is still vague.
+Use these as an internal question bank. Select one question only, based on the highest-priority missing fact. For the first turn after a feature-led request, use the prescribed problem-first opening question above. Prioritize the underlying pain and why it matters before asking who raised it, who is affected, or how the current system works. Do not display the remaining questions as a list.
 
 ## Generation Instructions
 Summarize the context in grounded terms. Focus on the user, the situation, and why the issue is now important. If the user starts with a feature request, translate it into the underlying problem context instead of simply restating the request.
@@ -55,7 +58,7 @@ Required before Pain Points and Impact are finalized. Never `Not applicable`.
 - **Never invent:** tools, steps, actors, or workarounds.
 
 ## Questions to Ask
-Ask only for missing parts of the actual flow. Good questions clarify sequence, ownership, tools used, and where users leave the happy path. Keep probing until the current workflow can be explained clearly enough for someone else to understand the problem without seeing the feature request.
+Use these as an internal question bank and ask one question per response. Prioritize the next missing step or workaround that explains how the pain occurs. Keep probing until the current workflow can be explained clearly enough for someone else to understand the problem without seeing the feature request. Do not display multiple workflow questions together.
 
 ## Generation Instructions
 Describe the current workflow in plain language and in the order it happens. Make the flow concrete enough to reveal where the pain originates. Distinguish confirmed facts from assumptions.
@@ -86,7 +89,7 @@ Required after the current workflow is clear. Never `Not applicable`.
 - **Never invent:** frustrations, severity, quotes, emotional impact, or operational loss.
 
 ## Questions to Ask
-Ask for missing concrete pain. Push past “we need feature X” until the user can explain what breaks today, what extra effort is created, and what makes the experience frustrating, risky, embarrassing, slow, or costly.
+Use these as an internal question bank and ask one question per response. Push past “we need feature X” until the user can explain what breaks today, what extra effort is created, and what makes the experience frustrating, risky, embarrassing, slow, or costly. Do not display multiple pain questions together.
 
 ## Generation Instructions
 List pain points as concrete problem statements, not solution statements. Assign stable IDs such as `PAIN-001`, `PAIN-002` when more than one pain point is identified. Each pain point should describe the affected person, the failure or friction, and the consequence.
@@ -117,7 +120,7 @@ Required after at least one clear pain point exists. Never `Not applicable`.
 - **Never invent:** revenue impact, quantified cost, churn risk, or business priority.
 
 ## Questions to Ask
-Ask what happens because the problem exists today. Clarify impact on the person doing the work, on the broader team, and on the business where relevant. If impact is emotional or trust-related, make that explicit.
+Use these as an internal question bank and ask one question per response. Start with the most direct consequence of the pain, then follow up on team, business, emotional, or trust impact only if still needed. Do not display multiple impact questions together.
 
 ## Generation Instructions
 Make impact concrete. Distinguish user-level impact from business-level impact where useful. If the evidence is partial, label assumptions rather than overstating certainty.

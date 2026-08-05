@@ -1,14 +1,13 @@
-# SOURCE ID: PRD-SECTION-PROMPTS-CONSOLIDATED
+# PRD Prompt
 
-# PRD Section Prompt Sources — Consolidated Knowledge File
+This file contains the detailed instructions for generating each PRD section. Match sections by exact heading with `templates/prd-template.md`.
 
-This knowledge source consolidates all 18 detailed PRD section instruction sources for custom GPT upload limits. Retrieve a section by its exact `SOURCE ID`. Each embedded source remains authoritative for its named PRD section.
+- Keep overall workflow rules in `project-instructions.md`.
+- Keep the template lightweight and place section-specific writing guidance here.
+- When a new PRD section is added to the template, add a matching heading and detailed guidance in this file.
 
----
 
-# SOURCE ID: PRD-SECTION-OVERVIEW
-
-# PRD Section: Overview — Product Purpose and Strategic Role
+## Overview
 
 ## Purpose
 Give all stakeholders a quick, cohesive understanding of the feature, its behavior, reason for existence, solved problem, user/system benefit, and place in the product ecosystem.
@@ -42,9 +41,8 @@ Generic product language, buzzwords, excessive implementation detail, disconnect
 
 ---
 
-# SOURCE ID: PRD-SECTION-PROBLEM-STATEMENT
 
-# PRD Section: Problem Statement — User Challenge and Need
+## Problem Statement
 
 ## Purpose
 Define the user's present challenge, the current gap and its consequences, and why a solution is necessary without prescribing implementation.
@@ -77,9 +75,8 @@ Solution design, vague pain, invented evidence or impact, generic filler, narrat
 
 ---
 
-# SOURCE ID: PRD-SECTION-OBJECTIVE
 
-# PRD Section: Objective — Enabled Capability and Outcomes
+## Objective
 
 ## Purpose
 State what the feature enables, who uses it, how it works at a high level, and the intended outcomes and benefits.
@@ -112,9 +109,8 @@ Verbose prose, implementation design, feature inventories, unsupported metrics, 
 
 ---
 
-# SOURCE ID: PRD-SECTION-USER-STORIES
 
-# PRD Section: User Stories — Role Goals with Acceptance Criteria
+## User Stories
 
 ## Purpose
 Capture primary role-based scenarios, why each matters, and measurable conditions of success.
@@ -149,9 +145,8 @@ Invented roles, solutionless aspirations, vague criteria, implementation tasks, 
 
 ---
 
-# SOURCE ID: PRD-SECTION-USE-CASES
 
-# PRD Section: Use Cases — End-to-End System Flows
+## Use Cases
 
 ## Purpose
 Show how user needs are fulfilled through explicit system behavior, including prerequisites, main paths, applicable alternatives, and resulting state.
@@ -186,9 +181,8 @@ Missing required labels, unnumbered main flows, invented behavior, excessive tec
 
 ---
 
-# SOURCE ID: PRD-SECTION-EMPATHY-LENS
 
-# PRD Section: Empathy Lens — Strict Question-and-Answer Analysis
+## Empathy Lens
 
 ## Purpose
 Expose the human, behavioral, emotional, outcome-visibility, decision, risk, and lifecycle context behind the feature.
@@ -234,9 +228,8 @@ Summaries replacing Q&A, skipped or merged questions, fabricated emotions/metric
 
 ---
 
-# SOURCE ID: PRD-SECTION-FUNCTIONAL-REQUIREMENTS
 
-# PRD Section: Functional Requirements — Atomic System Behavior
+## Functional Requirements
 
 ## Purpose
 Define what the system must do to achieve the objectives through clear user-visible behavior, system capabilities, rules, and data handling.
@@ -253,15 +246,18 @@ Required after Objective, User Stories, and Use Cases. Never `Not applicable`. S
 Ask only about missing behavior, actor/permission, state transition, validation, or observable result needed to make a requirement testable.
 
 ## Generation Instructions
-Write short, atomic, action-oriented statements. Every requirement must be measurable and testable. Focus on observable behavior and data handling. Split compound requirements. Avoid implementation technologies, internal classes, job names, and narrative prose.
+Write short, atomic, action-oriented statements. Every requirement must be measurable and testable. Focus on observable behavior and data handling. Split compound requirements. Avoid implementation technologies, internal classes, job names, and narrative prose. Before finalizing the section, confirm each requirement helps solve one or more approved pain points and flag any uncovered `PAIN-xxx` items.
 
 ## Output Format
 - Exact heading: `## Functional Requirements`
 - Numbered or bulleted list; one requirement per item.
+- Use stable requirement IDs such as `FR-001`, `FR-002` when the feature has multiple requirements.
+- For each requirement, include linked pain points such as `PAIN-001`, `PAIN-002` when that traceability is available.
 - No subheadings that add table-of-contents entries.
 
 ## Validation Checklist
 - [ ] Every item is atomic, observable, testable, and traceable to scope.
+- [ ] Every approved pain point is covered by at least one requirement, or the gap is called out explicitly.
 - [ ] Permissions, validations, states, and data behavior are explicit where relevant.
 - [ ] No contradiction with stories, use cases, or PDR.
 
@@ -270,9 +266,8 @@ Untestable verbs, bundled behaviors, implementation detail, unsupported requirem
 
 ---
 
-# SOURCE ID: PRD-SECTION-TASKS
 
-# PRD Section: Tasks — PR-Sized Implementation Checklist
+## Tasks
 
 ## Purpose
 Translate approved scope into an implementation sequence of independently reviewable and testable pull requests.
@@ -307,9 +302,8 @@ Implementation code, giant PRs, arbitrary stack assumptions, vague tasks, missin
 
 ---
 
-# SOURCE ID: PRD-SECTION-NON-FUNCTIONAL-REQUIREMENTS
 
-# PRD Section: Non-Functional Requirements — Measurable System Qualities
+## Non-Functional Requirements
 
 ## Purpose
 Define operationally observable quality expectations rather than business workflows.
@@ -343,9 +337,8 @@ Cover only relevant areas: performance, scalability, reliability, availability, 
 
 ---
 
-# SOURCE ID: PRD-SECTION-INFORMATION-ARCHITECTURE
 
-# PRD Section: Information Architecture and Navigation — Discoverable User Paths
+## Information Architecture / Navigation
 
 ## Purpose
 Define how users find, enter, understand, and move through feature content across roles and devices.
@@ -379,9 +372,8 @@ Invented screens/routes, styling/component commentary, backend detail, narrative
 
 ---
 
-# SOURCE ID: PRD-SECTION-SCREEN-DEFINITIONS
 
-# PRD Section: Screen Definitions — Observable UI States and Actions
+## Screen Definitions
 
 ## Purpose
 Describe every in-scope user-facing screen from a workflow perspective: why it exists, who uses it, what appears, what can be done, how it is reached, and how states/access behave.
@@ -416,9 +408,8 @@ Invented screens, fields, or permissions; large paragraphs; CSS/component/framew
 
 ---
 
-# SOURCE ID: PRD-SECTION-API-REQUIREMENTS
 
-# PRD Section: API Requirements — Access, Contracts, Validation, and Scope
+## API Requirements
 
 ## Purpose
 Define implementation-agnostic, observable API responsibilities and security boundaries for the feature.
@@ -452,9 +443,8 @@ Invented endpoints/payloads, missing permission or tenant boundaries, framework 
 
 ---
 
-# SOURCE ID: PRD-SECTION-DATA-ENTITY-CONSIDERATIONS
 
-# PRD Section: Data and Entity Considerations — Domain Ownership and Lifecycle
+## Data & Entity Considerations
 
 ## Purpose
 Explain the business meaning, boundaries, ownership, relationships, lifecycle, visibility, integrity, and audit needs of affected domain objects.
@@ -488,9 +478,8 @@ ORM annotations, table schemas, indexes, migrations, framework classes, reposito
 
 ---
 
-# SOURCE ID: PRD-SECTION-EDGE-CASES
 
-# PRD Section: Edge Cases — Failures, Boundaries, and Recovery
+## Edge Cases
 
 ## Purpose
 Define realistic exceptional and boundary scenarios with observable expected behavior, user impact, and recovery.
@@ -524,9 +513,8 @@ Cover relevant invalid actions, concurrency/races, revoked access, permission co
 
 ---
 
-# SOURCE ID: PRD-SECTION-SUCCESS-METRICS
 
-# PRD Section: Success Metrics — Attributable Outcomes and Diagnostics
+## Success Metrics
 
 ## Purpose
 Define measurable feature outcomes that show value, support comparisons, and diagnose adoption, discoverability, permission, reliability, or workflow problems.
@@ -560,9 +548,8 @@ Dashboard visits as success, vanity metrics, vague “better engagement,” inve
 
 ---
 
-# SOURCE ID: PRD-SECTION-NON-GOALS
 
-# PRD Section: Non-Goals — Explicit Current-Scope Exclusions
+## Non-Goals
 
 ## Purpose
 Prevent expectation mismatch by stating related capabilities, roles, workflows, integrations, or qualities intentionally excluded from the current delivery.
@@ -595,9 +582,8 @@ Vague phrases such as “advanced reporting is excluded,” invented scope cuts,
 
 ---
 
-# SOURCE ID: PRD-SECTION-FUTURE-ENHANCEMENTS
 
-# PRD Section: Future Enhancements — Uncommitted Product Evolution
+## Future Enhancements
 
 ## Purpose
 Record realistic capabilities that logically extend the current feature and explain their user or business value without turning them into commitments.
@@ -631,9 +617,8 @@ Describe plausible evolution such as automation, personalization, analytics, cro
 
 ---
 
-# SOURCE ID: PRD-SECTION-TIMELINE-PREDICTOR
 
-# PRD Section: Timeline Predictor — Lean Task-Based Engineering Estimate
+## Timeline Predictor
 
 ## Purpose
 Estimate the approved PR-sized task breakdown in lean engineering hours and show dependencies, delivery duration, and parallelization.
@@ -666,4 +651,3 @@ Estimate tightly in hours: simple CRUD/model/migration/UI tasks `0.5–2`; mediu
 
 ## Avoid
 Padding, review wait time, independent speculative scope, estimates above six hours without splitting, false precision, calendar promises, and inconsistency with Tasks.
-
